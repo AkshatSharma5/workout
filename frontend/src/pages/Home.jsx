@@ -13,7 +13,8 @@ import WorkoutForm from "../components/workoutForm";
 import { useWorkoutContext } from "../hooks/useWorkoutContext";
 import DeleteIcon from '@mui/icons-material/Delete';
 import toast, { Toaster } from "react-hot-toast";
-
+//date fns => simplifies Time/Date
+import formatDistanceToNow from "date-fns/formatDistanceToNow"
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
@@ -30,7 +31,7 @@ const Home = () => {
       }
     };
     fetchWorkouts();
-  }, []);
+  }, [dispatch]);
 
   // Handle pagination changes
   const handleChangePage = (event, newPage) => {
@@ -53,6 +54,7 @@ const Home = () => {
     }
     else{
       dispatch({type: "DELETE_WORKOUT", payload: json})
+      toast.success("Successfully Deleted!")
     }
   }
 
@@ -81,7 +83,7 @@ const Home = () => {
                 </TableCell>
                 <TableCell className="bg-[#393E46]">
                   <div className="font-bold text-[#00ADB5] text-md uppercase text-center font-oswald">
-                    Number of Repititions
+                    Number of repetitions
                   </div>
                 </TableCell>
                 <TableCell align="center" className="bg-[#393E46]">
@@ -119,7 +121,7 @@ const Home = () => {
                         <div className="text-center font-semibold font-oswald">{workout.reps}</div>
                       </TableCell>
                       <TableCell>
-                        <div className="text-center font-space">{workout.createdAt}</div>
+                        <div className="text-center font-space text-blue-800">{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</div>
                       </TableCell>
                       <TableCell>
                         <button onClick={()=>handleDeleteClick(workout._id)} className="text-red-600 text-sm text-center hover:text-red-800  active:scale-75 transition-all">

@@ -4,7 +4,7 @@ export const WorkoutsContext = createContext();
 
 export const workoutsReducer = (state, action) => { //state==prev_state
     switch(action.type){
-        case "SET_WORKOUTS":  // means jus set "all the wokrouts(an array of wokrouts)" with the givne data (==action.payload)
+        case "SET_WORKOUTS":  // means jus set "all the wokrouts(an array of wokrouts)" with the given data (==action.payload)
             return {workouts: action.payload} //returns the new state
         case "CREATE_WORKOUT":
             return {workouts: [action.payload, ...state.workouts]}
