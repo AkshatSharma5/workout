@@ -24,7 +24,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("http://localhost:3500/api/workouts");
+      const response = await fetch("https://mern-workout-app-m6xa.onrender.com/api/workouts");
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
@@ -45,7 +45,7 @@ const Home = () => {
 
   const handleDeleteClick = async (_id) => {
     console.log(_id)
-    const response = await fetch("http://localhost:3500/api/workouts/"+_id,{
+    const response = await fetch("https://mern-workout-app-m6xa.onrender.com/api/workouts/"+_id,{
       method:"DELETE",
     })
     const json = await response.json();

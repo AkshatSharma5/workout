@@ -57,7 +57,7 @@ const WorkoutForm = () => {
     // Now we have to send a POST Request to the server and store this new doc(row)
     const workout = { title, load, reps }; //new values to be added
     // A POST Request
-    const response = await fetch("http://localhost:3500/api/workouts", {
+    const response = await fetch("https://mern-workout-app-m6xa.onrender.com/api/workouts", {
       method: "POST",
       body: JSON.stringify(workout), //data that needs to be sent as JSON
       headers: {
