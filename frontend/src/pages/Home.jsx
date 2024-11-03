@@ -12,11 +12,8 @@ import React, { useEffect, useState } from "react";
 import WorkoutForm from "../components/workoutForm";
 import { useWorkoutContext } from "../hooks/useWorkoutContext";
 import DeleteIcon from '@mui/icons-material/Delete';
+import toast, { Toaster } from "react-hot-toast";
 
-
-const handleDeleteClick = async () => {
-
-}
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
@@ -44,6 +41,20 @@ const Home = () => {
     setRowsPerPage(parseInt(event.target.value, 7));
     setPage(0);
   };
+
+  const handleDeleteClick = async (_id) => {
+    console.log(_id)
+    const response = await fetch("http://localhost:3500/api/workouts/"+_id,{
+      method:"DELETE",
+    })
+    const json = await response.json();
+    if(!response.ok){
+      toast.error("Oops! Some error occurred!"+response.error)
+    }
+    else{
+      dispatch({type: "DELETE_WORKOUT", payload: json})
+    }
+  }
 
   return (
     <div className="flex gap-6">
@@ -111,7 +122,7 @@ const Home = () => {
                         <div className="text-center font-space">{workout.createdAt}</div>
                       </TableCell>
                       <TableCell>
-                        <button onClick={handleDeleteClick} className="text-red-600 text-sm text-center hover:text-red-800  active:scale-75 transition-all">
+                        <button onClick={()=>handleDeleteClick(workout._id)} className="text-red-600 text-sm text-center hover:text-red-800  active:scale-75 transition-all">
                           <DeleteIcon />
                         </button>
                       </TableCell>
