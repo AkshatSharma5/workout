@@ -123,20 +123,20 @@ const Shop = () => {
   return (
     <div className="bg-[#222831] font-space min-h-screen py-8 px-4">
       <div className="container mx-auto">
-        <h1 className="text-center uppercase font-oswald text-4xl text-[#EEEEEE] tracking-widest mb-8 underline underline-offset-8 decoration-[#00ADB5]">
+        <h1 className="animate__animated animate__flipInX text-center uppercase font-oswald text-4xl text-[#EEEEEE] tracking-widest mb-8 underline underline-offset-8 decoration-[#00ADB5]">
           our Products
         </h1>
 
         {/* Shakes */}
 
-        <h3 className="font-oswald uppercase text-2xl text-[#EEEEEE] tracking-wider mb-4 underline underline-offset-4 decoration-[#00ADB5] ml-1">
+        <h3 className="animate__animated animate__flipInX animate__delay-1s font-oswald uppercase text-2xl text-[#EEEEEE] tracking-wider mb-4 underline underline-offset-4 decoration-[#00ADB5] ml-1">
           Protein Shakes
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">
           {shakes.map((product) => (
             <div
               key={product.id}
-              className="bg-[#393E46] p-4 rounded-lg shadow-lg text-[#EEEEEE] relative"
+              className="bg-[#393E46] p-4 animate__animated animate__fadeInUp  rounded-lg shadow-lg text-[#EEEEEE] relative"
             >
               <img
                 src={product.image}
@@ -184,7 +184,7 @@ const Shop = () => {
 
         {/* Accessories */}
 
-        <h3 className="font-oswald uppercase text-2xl text-[#EEEEEE] tracking-wider my-5 underline underline-offset-4 decoration-[#00ADB5] mt-7 ml-1">
+        <h3 className="animate__animated animate__flipInX font-oswald uppercase text-2xl text-[#EEEEEE] tracking-wider my-5 underline underline-offset-4 decoration-[#00ADB5] mt-7 ml-1">
           accessories
         </h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6">

@@ -15,6 +15,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import toast, { Toaster } from "react-hot-toast";
 //date fns => simplifies Time/Date
 import formatDistanceToNow from "date-fns/formatDistanceToNow"
+import 'animate.css';
 
 const Home = () => {
   const { workouts, dispatch } = useWorkoutContext();
