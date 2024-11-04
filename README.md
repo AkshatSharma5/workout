@@ -24,7 +24,7 @@ This project is a full-stack application built to manage a marketplace for gym a
 
 
 ### Video Tutorial
-![Video Tutorial](https://github.com/user-attachments/assets/f1597ba9-a5bf-4538-90d2-ddcabe5659cb)
+[![Watch the video]](https://youtu.be/-6vHfLjCO4g)
 
 
 ## 🚀 Tech Stack
