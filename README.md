@@ -10,8 +10,22 @@ This project is a full-stack application built to manage a marketplace for gym a
 - **State Management:** Context API is used for global state management in the frontend.
 - **Modern UI/UX:** Styled with TailwindCSS for a responsive and minimalistic design.
 
-
 ---
+## 📷 Tutorial
+### Screenshots
+![image](https://github.com/user-attachments/assets/2f128981-1e5a-4cd2-a65a-22a5e912ffdd)
+![image](https://github.com/user-attachments/assets/51a4595d-8826-42f0-8ee0-ef263f59c7d2)
+![image](https://github.com/user-attachments/assets/98adb02f-6f2d-4239-872a-c0c7accb4217)
+(Check for incorrect input(s))
+![image](https://github.com/user-attachments/assets/ec8a01cc-5fd8-4e29-b166-869c3fe437a4)
+![image](https://github.com/user-attachments/assets/129af930-1c61-4be6-9c7b-e06dd3a7551e)
+![image](https://github.com/user-attachments/assets/3d2d730a-92e5-4647-ab06-226305a70df0)
+![image](https://github.com/user-attachments/assets/927a2e14-241c-4f30-9ef1-9a8f9931999a)
+
+
+### Video Tutorial
+![Video Tutorial](https://github.com/user-attachments/assets/f1597ba9-a5bf-4538-90d2-ddcabe5659cb)
+
 
 ## 🚀 Tech Stack
 
