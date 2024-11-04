@@ -9,9 +9,8 @@ import powder from "../assets/powder.png";
 import carb from "../assets/carb.png";
 import press from "../assets/press.png";
 import rope from "../assets/rope.png";
-import { useNavigate } from "react-router-dom";
-
 import { loadStripe } from "@stripe/stripe-js";
+
 const shakes = [
   {
     id: 1,
@@ -94,29 +93,31 @@ const accessories = [
   },
 ];
 const Shop = () => {
-  const navigate = useNavigate();
-
   const handleBuy = async (product) => {
-    // navigate("/payment", { state: { amount: product.price } });
-    const stripe = await loadStripe("pk_test_51QHUNWLrQuCWyQsoVxD7r7HPN1SwQDDbkXSSmQ4TcHO2HpmGskgvYVCMHRBGKRFEIclUWPJE8eC3PB2wFKLRPtFT00stN3fEqf")
+    const stripe = await loadStripe(
+      "pk_test_51QHUNWLrQuCWyQsoVxD7r7HPN1SwQDDbkXSSmQ4TcHO2HpmGskgvYVCMHRBGKRFEIclUWPJE8eC3PB2wFKLRPtFT00stN3fEqf"
+    );
     const body = {
-      product: product
-    }
-    const headers={
-      "Content-Type":"application/json"
-    }
-    const response = await fetch("http://localhost:3500/api/workouts/create-checkout-session",{
-      method: "POST",
-      headers: headers,
-      body: JSON.stringify(body)
-    })
-    const session = await response.json()
+      product: product,
+    };
+    const headers = {
+      "Content-Type": "application/json",
+    };
+    const response = await fetch(
+      "http://localhost:3500/api/workouts/create-checkout-session",
+      {
+        method: "POST",
+        headers: headers,
+        body: JSON.stringify(body),
+      }
+    );
+    const session = await response.json();
 
     const result = stripe.redirectToCheckout({
-      sessionId:session.id
-    })
-    if(result.error){
-      console.log("result mein error in sop.jsx line 119: ",result.error)
+      sessionId: session.id,
+    });
+    if (result.error) {
+      console.log("result mein error in shop.jsx line 120: ", result.error);
     }
   };
   return (
@@ -223,8 +224,10 @@ const Shop = () => {
                 </span>
                 <span>{product.rating}</span>
               </div>
-              <button className="w-full bg-[#00ADB5] hover:bg-[#35c1c8]  text-[#222831] font-bold py-2 rounded-lg mb-2 transition-all uppercase font-oswald active:scale-90 " 
-                onClick={() => handleBuy(product)}>
+              <button
+                className="w-full bg-[#00ADB5] hover:bg-[#35c1c8]  text-[#222831] font-bold py-2 rounded-lg mb-2 transition-all uppercase font-oswald active:scale-90 "
+                onClick={() => handleBuy(product)}
+              >
                 Buy Now
               </button>
               <button className="w-full bg-[#222831] text-[#EEEEEE] font-bold py-2 rounded-lg transition-all active:scale-90 ">

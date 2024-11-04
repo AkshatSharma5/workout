@@ -7,7 +7,10 @@ const {
   deleteWorkout,
   updateWorkout,
 } = require("../controllers/workoutController");
-const Stripe = require("stripe")("sk_test_51QHUNWLrQuCWyQsojC3D9Bp3pnA2JBKLFOdLLjrDwQtDZ1i7gsbmII2lJmMCtt7K36nPIw31yUzYnyg7f5CMP1nE00YKDbjCB9");
+
+require("dotenv").config()
+const Stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+
 // GET all workouts
 router.get("/", getWorkouts);
 

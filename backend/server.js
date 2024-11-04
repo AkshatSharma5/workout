@@ -4,7 +4,6 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const workoutRoutes = require("./routes/workouts");
-const Stripe = require("stripe");
 
 require("dotenv").config();
 
@@ -35,10 +34,6 @@ mongoose.connect(process.env.MONGO_URI).then(
   ()=>console.log("Successfully connected")
 ).catch((error)=>console.log("Some error occurred: ",error))
 //Note that if you use "@,#,etc" - special characters in your PASSWORD , make sure to escape them using '/'
-const stripe = require("stripe")("sk_test_51QHUNWLrQuCWyQsojC3D9Bp3pnA2JBKLFOdLLjrDwQtDZ1i7gsbmII2lJmMCtt7K36nPIw31yUzYnyg7f5CMP1nE00YKDbjCB9");
-
-
-
 
 app.listen(process.env.PORT, () => {
   console.log(
