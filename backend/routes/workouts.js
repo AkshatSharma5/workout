@@ -7,7 +7,7 @@ const {
   deleteWorkout,
   updateWorkout,
 } = require("../controllers/workoutController");
-
+const Stripe = require("stripe")("sk_test_51QHUNWLrQuCWyQsojC3D9Bp3pnA2JBKLFOdLLjrDwQtDZ1i7gsbmII2lJmMCtt7K36nPIw31yUzYnyg7f5CMP1nE00YKDbjCB9");
 // GET all workouts
 router.get("/", getWorkouts);
 
@@ -25,16 +25,19 @@ router.patch("/:id", updateWorkout);
 
 router.post("/create-checkout-session", async (req, res) => {
   const { product } = req.body;
-  const products = [product];
+  const products = [];
+  products.push(product)
   const lineItems = products.map((product) => ({
     price_data: {
       currency: "usd",
-      unit_amount: product.price,
+      unit_amount: Math.round(product.price * 100/80), // Stripe requires prices in cents
       product_data: {
         name: product.name,
       },
     },
+    quantity: 1, // Moved quantity here, outside of price_data
   }));
+  
 
   const session = await Stripe.checkout.sessions.create({
     payment_method_types: ["card"],
