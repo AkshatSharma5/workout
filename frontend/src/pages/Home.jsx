@@ -121,7 +121,7 @@ const Home = () => {
                         <div className="text-center font-semibold font-oswald">{workout.reps}</div>
                       </TableCell>
                       <TableCell>
-                        <div className="text-center font-space text-blue-800">{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</div>
+                        <div className="text-center w-[10rem] font-space text-blue-800">{formatDistanceToNow(new Date(workout.createdAt), { addSuffix: true })}</div>
                       </TableCell>
                       <TableCell>
                         <button onClick={()=>handleDeleteClick(workout._id)} className="text-red-600 text-sm text-center hover:text-red-800  active:scale-75 transition-all">
