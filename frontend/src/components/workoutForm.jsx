@@ -81,7 +81,7 @@ const WorkoutForm = () => {
 
   return (
     <form
-      className="flex font-space bg-gradient-to-t to-[#5cc9d33a] from-[#27c5d486] rounded-xl flex-col gap-1 items-center w-[30%] mt-[4.8%] shadow-xl create"
+      className="flex font-space bg-gradient-to-t to-[#5cc9d33a] from-[#27c5d486] rounded-xl flex-col gap-1 items-center w-[50%] md:w-[30%] mt-[4.8%] shadow-xl create"
       onSubmit={handleSubmit}
     >
       <div>

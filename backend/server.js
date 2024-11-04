@@ -4,8 +4,24 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
 const workoutRoutes = require("./routes/workouts");
+const Stripe = require("stripe");
 
 require("dotenv").config();
+
+const stripe = require("stripe")("sk_test_51QHUNWLrQuCWyQsojC3D9Bp3pnA2JBKLFOdLLjrDwQtDZ1i7gsbmII2lJmMCtt7K36nPIw31yUzYnyg7f5CMP1nE00YKDbjCB9");
+
+app.post("/create-payment-intent", async (req, res) => {
+  const { amount } = req.body;
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount,
+      currency: "usd", // chnage to usd 
+    });
+    res.send({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
 
 app.use(cors())
 // middleware for sending "data" through POST/PATCH request as a json
@@ -34,6 +50,10 @@ mongoose.connect(process.env.MONGO_URI).then(
   ()=>console.log("Successfully connected")
 ).catch((error)=>console.log("Some error occurred: ",error))
 //Note that if you use "@,#,etc" - special characters in your PASSWORD , make sure to escape them using '/'
+
+
+
+
 
 app.listen(process.env.PORT, () => {
   console.log(

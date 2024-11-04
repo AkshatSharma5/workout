@@ -59,7 +59,7 @@ const Home = () => {
   }
 
   return (
-    <div className="flex gap-6">
+    <div className="home-king flex md:flex-row flex-col gap-6">
       <div className="home">
         <h2 className="font-bold text-green-600 text-3xl py-4">Home</h2>
         <TableContainer component={Paper}>
