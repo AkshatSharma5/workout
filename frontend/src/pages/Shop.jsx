@@ -104,7 +104,7 @@ const Shop = () => {
       "Content-Type": "application/json",
     };
     const response = await fetch(
-      "http://localhost:3500/api/workouts/create-checkout-session",
+      "https://workout-1s89.onrender.com/create-checkout-session",
       {
         method: "POST",
         headers: headers,

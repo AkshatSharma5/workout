@@ -10,6 +10,7 @@ const {
 
 require("dotenv").config()
 const Stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const whey = require("../whey.png")
 
 // GET all workouts
 router.get("/", getWorkouts);
@@ -36,6 +37,8 @@ router.post("/create-checkout-session", async (req, res) => {
       unit_amount: Math.round(product.price * 100/80), // Stripe requires prices in cents
       product_data: {
         name: product.name,
+        description: product.category,
+        images:[whey]
       },
     },
     quantity: 1, // Moved quantity here, outside of price_data
