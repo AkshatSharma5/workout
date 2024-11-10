@@ -25,7 +25,7 @@ const Home = () => {
 
   useEffect(() => {
     const fetchWorkouts = async () => {
-      const response = await fetch("https://workout-1s89.onrender.com");
+      const response = await fetch("http://localhost:3500/api/workouts");
       const json = await response.json();
       if (response.ok) {
         dispatch({ type: "SET_WORKOUTS", payload: json });
@@ -46,7 +46,7 @@ const Home = () => {
 
   const handleDeleteClick = async (_id) => {
     console.log(_id)
-    const response = await fetch("https://workout-1s89.onrender.com/"+_id,{
+    const response = await fetch("http://localhost:3500/api/workouts/"+_id,{
       method:"DELETE",
     })
     const json = await response.json();
