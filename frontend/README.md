@@ -55,7 +55,7 @@ The platform's backend is powered by **Node.js**, **Express.js**, and **MongoDB*
 
 
 ### Video Tutorial:
-<a href="https://youtu.be/vt5fpE0bzSY" target="_blank"><img src="https://github.com/user-attachments/assets/1ec7ffb8-8875-4a42-b292-4c414d2d10da" width="50px" height="50px"/></a>
+<a href="https://youtu.be/-6vHfLjCO4g" target="_blank"><img src="https://github.com/user-attachments/assets/1ec7ffb8-8875-4a42-b292-4c414d2d10da" width="50px" height="50px"/></a>
 
 ---
 
