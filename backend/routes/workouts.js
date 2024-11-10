@@ -37,7 +37,6 @@ router.post("/create-checkout-session", async (req, res) => {
       product_data: {
         name: product.name,
         description: product.category,
-        images:[whey]
       },
     },
     quantity: 1, // Moved quantity here, outside of price_data
