@@ -10,7 +10,6 @@ const {
 
 require("dotenv").config()
 const Stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
-const whey = require("../whey.png")
 
 // GET all workouts
 router.get("/", getWorkouts);
