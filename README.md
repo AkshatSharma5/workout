@@ -1,9 +1,12 @@
+>[!CAUTION]
+>If the site does not load data instantly, please be patient as <i>render.com</i> may offer upto 50 sec delay.
+
 # 🏋️ Workout Marketplace
 
 A comprehensive workout platform where users can browse and purchase gym/workout products, manage workouts, and make secure payments through Stripe.<br/>
 The platform's backend is powered by **Node.js**, **Express.js**, and **MongoDB**, while the frontend is built using **React.js**, **TailwindCSS**, and **ContextAPI**.<br/>
 > [!IMPORTANT]
-> Since, I don't have StripeJS Subscription, so payments can't be done in prod-mode, while the dev-mode supports it fine! ✨
+> Since, I don't have StripeJS Subscription, so payments can't be done in prod-mode, while the dev-mode supports it fine! ✨<br/>
 > <b>The site is live [here](https://mern-workout-app.netlify.app/)!</b>
 
 ## ✨ Key Features
