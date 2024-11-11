@@ -1,3 +1,6 @@
+>[!CAUTION]
+>If the site does not load data instantly, please be patient as <i>render.com</i> may offer upto 50 sec delay.
+
 # 🏋️ Workout Marketplace
 
 A comprehensive workout platform where users can browse and purchase gym/workout products, manage workouts, and make secure payments through Stripe.<br/>
