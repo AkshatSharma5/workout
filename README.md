@@ -11,6 +11,10 @@ The platform's backend is powered by **Node.js**, **Express.js**, and **MongoDB*
 - **🏋️‍♂️ Workout Management**: 
   - Create, update, and delete workout routines.
   - Workouts are stored in MongoDB for persistent data storage.
+
+- **🏋️‍♂️ User Role Management Dashboard**: 
+  - Create, update, and delete users and their roles.
+  - Dashboard to get clear cut info of all users and their roles.
   
 - **🛍️ Marketplace**:
   - Explore a wide range of fitness products.
