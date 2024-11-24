@@ -35,11 +35,18 @@ const Navbar = () => {
         >
           Workout Buddy!
         </Typography>
+        
+        <Link to="/dashboard">
+          <button className="bg-white px-4 active:scale-75 transition-all py-2 rounded-lg text-[#00ADB5] text-md font-bold font-poppins mr-6">
+            DASHBOARD
+          </button>
+        </Link>
         <Link to="/shop">
           <button className="bg-white px-4 active:scale-75 transition-all py-2 rounded-lg text-[#00ADB5] text-md font-bold font-poppins">
             SHOP NOW! <ShoppingCartIcon />
           </button>
         </Link>
+
       </Toolbar>
     </AppBar>
   );
