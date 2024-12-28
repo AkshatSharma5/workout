@@ -3,7 +3,9 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const app = express();
+
 const workoutRoutes = require("./routes/workouts");
+const userRoutes = require("./routes/user");
 
 require("dotenv").config();
 
@@ -18,6 +20,7 @@ app.use((req,res,next)=>{  // A middleware
 
 //Register all routes to this URL
 app.use("/api/workouts", workoutRoutes) // all routes to be accessed now as "localhost:3500/api/workouts(name_of route)" , replace  "(name_of route)" by name of route like "/", "/faq"
+app.use("/api/user", userRoutes)
 
 // NOW NO MORE REQUIRED AS WE R USING /routes/workouts.js FOR ROUTES NOW...
 // app.get("/", (req, res) => {
