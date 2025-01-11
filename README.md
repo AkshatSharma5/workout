@@ -1,6 +1,6 @@
 >[!CAUTION]
->If the site does not load data instantly, please be patient as <i>render.com</i> may offer upto 50 sec delay.
->*Currently, Due to Non-Premium Subscription of Stripe, one can make Payments through Stripe in DEV Mode only*
+>If the site does not load data instantly, please be patient as <i>render.com</i> may offer upto 50 sec delay.<br/>
+>**Currently, Due to Non-Premium Subscription of Stripe, one can make Payments through Stripe in DEV Mode only**
 
 # 🏋️ Workout Marketplace
 
