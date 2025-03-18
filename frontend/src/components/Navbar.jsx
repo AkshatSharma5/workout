@@ -35,11 +35,24 @@ const Navbar = () => {
         >
           Workout Buddy!
         </Typography>
+        <div className="flex gap-2">          
+        <Link to="/login">
+          <button className="px-4 transition-all py-2 rounded-lg text-black text-md underline underline-offset-4 decoration-white hover:decoration-black hover:-translate-y-[0.7vh] font-josefin  hover:text-white font-semibold uppercase">
+            Log in
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="px-4 transition-all py-2 rounded-lg text-black text-md underline underline-offset-4 decoration-white hover:decoration-black hover:-translate-y-[0.7vh] font-josefin  hover:text-white font-semibold uppercase">
+            Sign up
+          </button>
+        </Link>
         <Link to="/shop">
-          <button className="bg-white px-4 active:scale-75 transition-all py-2 rounded-lg text-[#00ADB5] text-md font-bold font-poppins">
+          <button className="bg-white px-3 active:scale-90 transition-all py-1 rounded-lg text-[#00ADB5] text-md font-semibold font-poppins hover:bg-slate-100">
             SHOP NOW! <ShoppingCartIcon />
           </button>
         </Link>
+        </div>
+        
       </Toolbar>
     </AppBar>
   );
